@@ -41,6 +41,8 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('transaction')->as('transaction.')->group(function () {
         Route::resource('incoming', \App\Http\Controllers\IncomingLetterController::class);
         Route::resource('outgoing', \App\Http\Controllers\OutgoingLetterController::class);
+        Route::resource('services', \App\Http\Controllers\ServicesLetterController::class);
+        Route::get('services/{service}/print', [\App\Http\Controllers\ServicesLetterController::class, 'print'])->name('services.print');
         Route::resource('{letter}/disposition', \App\Http\Controllers\DispositionController::class)->except(['show']);
     });
 

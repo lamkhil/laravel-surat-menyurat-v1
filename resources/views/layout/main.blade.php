@@ -66,7 +66,7 @@
     <script src="{{ asset('sneat/js/config.js') }}"></script>
 </head>
 
-<body>
+<body class="wysihtml5-supported">
 <!-- Layout wrapper -->
 <div class="layout-wrapper layout-content-navbar">
     <div class="layout-container">

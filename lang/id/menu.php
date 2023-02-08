@@ -8,6 +8,7 @@ return [
         'incoming_letter' => 'Surat Masuk',
         'outgoing_letter' => 'Surat Keluar',
         'disposition_letter' => 'Surat Disposisi',
+        'services_letter' => 'Surat Pelayanan'
     ],
     'agenda' => [
         'menu' => 'Buku Agenda',

@@ -42,6 +42,12 @@
                             data-i18n="{{ __('menu.transaction.outgoing_letter') }}">{{ __('menu.transaction.outgoing_letter') }}</div>
                     </a>
                 </li>
+                <li class="menu-item {{ \Illuminate\Support\Facades\Route::is('transaction.services.*') ? 'active' : '' }}">
+                    <a href="{{ route('transaction.services.index') }}" class="menu-link">
+                        <div
+                            data-i18n="{{ __('menu.transaction.services_letter') }}">{{ __('menu.transaction.services_letter') }}</div>
+                    </a>
+                </li>
             </ul>
         </li>
         <li class="menu-item {{ \Illuminate\Support\Facades\Route::is('agenda.*') ? 'active open' : '' }}">

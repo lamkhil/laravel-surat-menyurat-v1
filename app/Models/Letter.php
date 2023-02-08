@@ -18,18 +18,7 @@ class Letter extends Model
     /**
      * @var string[]
      */
-    protected $fillable = [
-        'reference_number',
-        'agenda_number',
-        'from',
-        'to',
-        'letter_date',
-        'received_date',
-        'description',
-        'note',
-        'type',
-        'classification_code',
-        'user_id',
+    protected $guarded = [
     ];
 
     /**
@@ -51,6 +40,10 @@ class Letter extends Model
         return Carbon::parse($this->letter_date)->isoFormat('dddd, D MMMM YYYY');
     }
 
+    public function getFormattedLetterDate2Attribute(): string {
+        return Carbon::parse($this->letter_date)->isoFormat('D MMMM YYYY');
+    }
+
     public function getFormattedReceivedDateAttribute(): string {
         return Carbon::parse($this->received_date)->isoFormat('dddd, D MMMM YYYY');
     }
@@ -66,6 +59,11 @@ class Letter extends Model
     public function scopeType($query, LetterType $type)
     {
         return $query->where('type', $type->type());
+    }
+
+    public function scopeServices($query)
+    {
+        return $query->where('explain_name','!=',null);
     }
 
     public function scopeIncoming($query)

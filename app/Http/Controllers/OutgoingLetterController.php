@@ -138,7 +138,7 @@ class OutgoingLetterController extends Controller
      * @return View
      */
     public function edit(Letter $outgoing): View
-    {
+    {   
         return view('pages.transaction.outgoing.edit', [
             'data' => $outgoing,
             'classifications' => Classification::all(),
