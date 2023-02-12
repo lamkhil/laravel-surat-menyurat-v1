@@ -66,6 +66,11 @@ class Letter extends Model
         return $query->where('explain_name','!=',null);
     }
 
+    public function scopeInvite($query)
+    {
+        return $query->where('invitation_to','!=',null);
+    }
+
     public function scopeIncoming($query)
     {
         return $this->scopeType($query, LetterType::INCOMING);

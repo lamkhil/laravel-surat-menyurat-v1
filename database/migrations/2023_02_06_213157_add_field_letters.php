@@ -14,14 +14,18 @@ return new class extends Migration
     public function up()
     {
         Schema::table('letters', function (Blueprint $table) {
+            $table->foreignId('petugas')->nullable();
+            $table->string('petugas_name')->nullable();
             $table->string('sign_name')->nullable();
             $table->string('sign_position')->nullable();
-            $table->string('sign_id')->nullable();
+            $table->foreignId('sign')->nullable();
             $table->string('sign_rank')->nullable();
+            $table->string('sign_id')->nullable();
             $table->string('explain_name')->nullable();
             $table->string('explain_place_and_date_of_birth')->nullable();
             $table->string('explain_religion')->nullable();
             $table->string('explain_job')->nullable();
+            $table->string('explain_phone')->nullable();
             $table->string('explain_nik')->nullable();
             $table->string('explain_address')->nullable();
             $table->string('explain_martial_status')->nullable();
@@ -56,6 +60,7 @@ return new class extends Migration
             $table->dropColumn('explain_place_and_date_of_birth');
             $table->dropColumn('explain_religion');
             $table->dropColumn('explain_job');
+            $table->dropColumn('explain_phone');
             $table->dropColumn('explain_nik');
             $table->dropColumn('explain_address');
             $table->dropColumn('explain_martial_status');

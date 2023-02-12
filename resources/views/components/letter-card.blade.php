@@ -22,7 +22,7 @@
                 @endif
                 @if($letter->type == 'services' && sizeof($letter->attachments)==0)
                 <div class="mx-3">
-                    <a href="{{ route('transaction.services.edit', $letter)}}?sign=true " class="btn btn-primary btn">Tanda tangan</a>
+                    <a href="{{ route('transaction.services.edit', $letter)}}?ttd=true " class="btn btn-primary btn">Tanda tangan</a>
                 </div>
                 @endif
                 <div class="dropdown d-inline-block">

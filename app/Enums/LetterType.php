@@ -7,6 +7,7 @@ enum LetterType
     case INCOMING;
     case OUTGOING;
     case SERVICES;
+    case INVITE;
 
     public function type(): string
     {
@@ -14,6 +15,7 @@ enum LetterType
             self::INCOMING => 'incoming',
             self::OUTGOING => 'outgoing',
             self::SERVICES => 'services',
+            self::SERVICES => 'invite',
         };
     }
 }

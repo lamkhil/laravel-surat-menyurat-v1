@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
@@ -26,13 +26,25 @@
             width: 100%;
         }
 
-        table, th, td {
+        table,
+        th,
+        td {
             border: 1px solid black;
             border-collapse: collapse;
         }
 
-        th, td {
+        th,
+        td {
             padding: 10px;
+        }
+
+        td {
+            text-align: start;
+            font-size: 9pt;
+        }
+
+        th {
+            font-size: 9pt;
         }
 
         #filter-section {
@@ -41,46 +53,66 @@
         }
     </style>
 </head>
-<body onload="window.print()">
 
-<h1>{{ $config['institution_name'] }}</h1>
-<h4>{{ $config['institution_address'] }}</h4>
-<hr>
+@php
+$bulan = ['JANUARI', 'FEBRUARI', 'MARET', 'APRIL', 'MEI', 'JUNI', 'JULI', 'AGUSTUS', 'SEPTEMBER', 'OKTOBER', 'NOVEMBER', 'DESEMBER']
+@endphp
 
-<h2>{{ $title }}</h2>
+<body>
 
-@if($since && $until && $filter)
-    <div id="filter-section">
-        {{ __('model.letter.' . $filter) }}: {{ "$since - $until" }}
-        <br>
-        Total: {{ count($data) }}
-    </div>
-@endif
+    <h6 style="margin: 0px; font-size:9pt;font-family:Arial;">DAFTAR PENERIMAAN PELAYANAN KELURAHAN NAMBANGAN LOR</h6>
+    <h6 style="margin: 0px; font-size:9pt;font-family:Arial;">KECAMATAN MANGUHARJO KOTA MADIUN</h6>
+    @if($since && $until && $filter)
+    @php
+        $bulanNum = explode('-', $since)[1];
+        $bulanString = $bulan[(int)$bulanNum-1];
+    @endphp
+    <h6 style="margin: 0px; font-size:9pt;font-family:Arial;">BULAN {{$bulanString}} TAHUN 2023</h6>
+    @else
+    @php
+        $bulanNum = '';
+        $bulanString = $bulan[0];
 
-<table>
-    <thead>
-    <tr>
-        <th>{{ __('model.letter.agenda_number') }}</th>
-        <th>{{ __('model.letter.reference_number') }}</th>
-        <th>{{ __('model.letter.to') }}</th>
-        <th>{{ __('model.letter.letter_date') }}</th>
-        <th>{{ __('model.letter.description') }}</th>
-        <th>{{ __('model.letter.note') }}</th>
-    </tr>
-    </thead>
-    <tbody>
-    @foreach($data as $letter)
-        <tr>
-            <td>{{ $letter->agenda_number }}</td>
-            <td>{{ $letter->reference_number }}</td>
-            <td>{{ $letter->to }}</td>
-            <td>{{ $letter->formatted_letter_date }}</td>
-            <td>{{ $letter->description }}</td>
-            <td>{{ $letter->note }}</td>
-        </tr>
-    @endforeach
-    </tbody>
-</table>
+        if(sizeof($data)>0){
+            $bulanNum = $data[0]->letter_date->format('m');
+            $bulanString = $bulan[(int)$bulanNum - 1];
+        }
+    @endphp
+    <h6 style="margin: 0px; font-size:9pt;font-family:Arial;">BULAN {{$bulanString}} TAHUN 2023</h6>
+    @endif
+    <hr>
+
+    @php
+    $no = 1;
+    @endphp
+
+    <table>
+        <thead>
+            <tr>
+                <th>NO</th>
+                <th>JENIS PELAYANAN</th>
+                <th>TANGGAL PELAYANAN</th>
+                <th>PETUGAS PELAYANAN</th>
+                <th>PENERIMA PELAYANAN</th>
+                <th>ALAMAT</th>
+                <th>NO HP</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($data as $letter)
+            <tr>
+                <td>{{ $no++ }}</td>
+                <td>{{ $letter->classification->type }}</td>
+                <td>{{ $letter->letter_date->format('d/m/Y') }}</td>
+                <td>{{ $letter->petugas_name }}</td>
+                <td>{{ $letter->explain_name }}</td>
+                <td>{{ $letter->explain_address }}</td>
+                <td>{{ $letter->explain_phone }}</td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
 
 </body>
+
 </html>

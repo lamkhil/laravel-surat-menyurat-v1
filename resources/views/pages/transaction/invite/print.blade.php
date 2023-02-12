@@ -92,7 +92,7 @@
     <title>Print {{$data->explain_name}}</title>
 </head>
 
-<body onload="window.print()">
+<body>
     <!-- Generate Surat Keterangan -->
     <!-- =================================== -->
 

@@ -30,11 +30,11 @@ class ConfigSeeder extends Seeder
             ],
             [
                 'code' => 'institution_name',
-                'value' => '404nfid',
+                'value' => 'Kelurahan Nambangan Lor',
             ],
             [
                 'code' => 'institution_address',
-                'value' => 'Jl. Padat Karya',
+                'value' => 'Jl. Merpati No.75, RT.1, Nambangan Lor, Kec. Manguharjo, Kota Madiun, Jawa Timur 63129',
             ],
             [
                 'code' => 'institution_phone',

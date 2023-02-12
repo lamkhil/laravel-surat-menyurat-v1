@@ -11,7 +11,7 @@ return [
         'reference_number' => 'Nomor Surat',
         'letter_date' => 'Tanggal Surat',
         'received_date' => 'Tanggal Diterima',
-        'description' => 'Ringkasan',
+        'description' => 'Isi Surat',
         'note' => 'Keterangan',
         'dispose' => 'Disposisi Surat',
         'attachment' => 'Lampiran',

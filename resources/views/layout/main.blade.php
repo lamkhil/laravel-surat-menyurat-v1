@@ -27,7 +27,7 @@
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>{{ config('app.name') }}</title>
+    <title>Surat Pelayanan</title>
 
     <meta name="description" content=""/>
 
@@ -123,13 +123,13 @@
 <script>
     $(document).on('click', '.btn-delete', function (req) {
         Swal.fire({
-            title: '{{ __('menu.general.delete_confirm') }}',
+            title: "{{ __('menu.general.delete_confirm') }}",
             text: "{{ __('menu.general.delete_warning') }}",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#696cff',
-            confirmButtonText: '{{ __('menu.general.delete') }}',
-            cancelButtonText: '{{ __('menu.general.cancel') }}'
+            confirmButtonText: "{{ __('menu.general.delete') }}",
+            cancelButtonText: "{{ __('menu.general.cancel') }}"
         }).then((result) => {
             if (result.isConfirmed) {
                 $(this).parent('form').submit();
@@ -145,21 +145,21 @@
     <script>
         Toast.fire({
             icon: 'success',
-            title: '{{ session('success') }}'
+            title: "{{ session('success') }}"
         })
     </script>
 @elseif(session('error'))
     <script>
         Toast.fire({
             icon: 'error',
-            title: '{{ session('error') }}'
+            title: "{{ session('error') }}"
         })
     </script>
 @elseif(session('info'))
     <script>
         Toast.fire({
             icon: 'info',
-            title: '{{ session('info') }}'
+            title: "{{ session('info') }}"
         })
     </script>
 @endif

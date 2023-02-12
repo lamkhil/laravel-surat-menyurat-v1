@@ -43,6 +43,8 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('outgoing', \App\Http\Controllers\OutgoingLetterController::class);
         Route::resource('services', \App\Http\Controllers\ServicesLetterController::class);
         Route::get('services/{service}/print', [\App\Http\Controllers\ServicesLetterController::class, 'print'])->name('services.print');
+        Route::resource('invite', \App\Http\Controllers\InviteLetterController::class);
+        Route::get('invite/{invite}/print', [\App\Http\Controllers\InviteLetterController::class, 'print'])->name('invite.print');
         Route::resource('{letter}/disposition', \App\Http\Controllers\DispositionController::class)->except(['show']);
     });
 

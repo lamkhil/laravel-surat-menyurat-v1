@@ -11,7 +11,7 @@ return [
         'services_letter' => 'Surat Pelayanan'
     ],
     'agenda' => [
-        'menu' => 'Buku Agenda',
+        'menu' => 'Buku Pelayanan',
         'incoming_letter' => 'Surat Masuk',
         'outgoing_letter' => 'Surat Keluar',
         'disposition_letter' => 'Surat Disposisi',

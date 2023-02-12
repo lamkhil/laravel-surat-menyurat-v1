@@ -46,7 +46,7 @@
                 <div class="mb-3">
                     <select class="form-select" id="sign" name="sign">
                         @foreach($admin as $item)
-                        <option value="{{ $item->id }}" @selected(old('sign')==$item->id)>
+                        <option value="{{ $item->id }}" @selected(old('petugas')==$item->id)>
                             {{ $item->name }}
                         </option>
                         @endforeach
@@ -61,10 +61,6 @@
             </div>
             <div class="col-sm-12 col-12 col-md-6 col-lg-4">
                 <x-input-form name="explain_nik" label="NIK*" />
-            </div>
-
-            <div class="col-sm-12 col-12 col-md-6 col-lg-4">
-                <x-input-form name="explain_phone" label="No Telp*"/>
             </div>
             <div class="col-sm-12 col-12 col-md-6 col-lg-4">
                 <x-input-form name="explain_address" label="Alamat*" />

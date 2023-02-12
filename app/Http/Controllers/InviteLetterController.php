@@ -18,7 +18,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\App;
 use Illuminate\Validation\Rule;
 
-class ServicesLetterController extends Controller
+class InviteLetterController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,8 +27,8 @@ class ServicesLetterController extends Controller
      */
     public function index(Request $request): View
     {
-        return view('pages.transaction.services.index', [
-            'data' => Letter::services()->render($request->search),
+        return view('pages.transaction.invite.index', [
+            'data' => Letter::invite()->render($request->search),
             'search' => $request->search,
         ]);
     }
@@ -40,12 +40,12 @@ class ServicesLetterController extends Controller
      */
     public function create()
     {
-        return view('pages.transaction.services.create', [
+        return view('pages.transaction.invite.create', [
             'classifications' => Classification::where('jenis_surat', 'service')->get(),
-            'admin' => User::where('role', Role::ADMIN->status())->get(),
-            'staff' => User::where('role', Role::STAFF->status())->get(),
-            'agama' => ['Islam', 'Kristen', 'Katolik', 'Hindu', 'Budha', 'Konghucu'],
-            'pernikahan' => ['Belum Kawin', 'Kawin', 'Cerai Hidup', 'Cerai Mati']
+            'admin' => User::where('role',Role::ADMIN->status())->get(),
+            'staff' => User::where('role',Role::STAFF->status())->get(),
+            'agama'=>['Islam', 'Kristen', 'Katolik', 'Hindu', 'Budha', 'Konghucu'],
+            'pernikahan'=>['Belum Kawin', 'Kawin', 'Cerai Hidup', 'Cerai Mati']
         ]);
     }
 
@@ -59,7 +59,7 @@ class ServicesLetterController extends Controller
     {
         try {
             $user = auth()->user();
-            if ($request->type != LetterType::SERVICES->type()) throw new \Exception(__('menu.transaction.services_letter'));
+            if ($request->type != LetterType::INVITE->type()) throw new \Exception(__('menu.transaction.invite_letter'));
             $newLetter = $request->validate(
                 [
                     "type" => "required",
@@ -74,20 +74,19 @@ class ServicesLetterController extends Controller
                     "explain_address" => "required",
                     "explain_martial_status" => "required",
                     "description" => "required",
-                    "explain_phone" => 'required'
                 ]
             );
             $sign = User::find($newLetter['sign']);
             $petugas = User::find($newLetter['petugas']);
             $newLetter['user_id'] = $user->id;
-            $newLetter['petugas_name'] = $petugas->name;
-            $newLetter['sign_name'] = $sign->name;
-            $newLetter['sign_position'] = $sign->posisi;
-            $newLetter['sign_rank'] = $sign->pangkat;
-            $newLetter['sign_id'] = $sign->nip;
+            $newLetter['petugas_name']=$petugas->name;
+            $newLetter['sign_name']=$sign->name;
+            $newLetter['sign_position']=$sign->posisi;
+            $newLetter['sign_rank']=$sign->pangkat;
+            $newLetter['sign_id']=$sign->nip;
             Letter::create($newLetter);
             return redirect()
-                ->route('transaction.services.index')
+                ->route('transaction.invite.index')
                 ->with('success', __('menu.general.success'));
         } catch (\Throwable $exception) {
             return back()->with('error', $exception->getMessage());
@@ -108,13 +107,13 @@ class ServicesLetterController extends Controller
     /**
      * Print the specified resource.
      *
-     * @param Letter $services
+     * @param Letter $invite
      * @return View
      */
     public function print(Letter $service): View
     {
         $descist = explode(PHP_EOL, $service->description);
-        return view('pages.transaction.services.print', [
+        return view('pages.transaction.invite.print', [
             'data' => $service,
             'description' => $descist,
             'classifications' => Classification::all(),
@@ -124,28 +123,20 @@ class ServicesLetterController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param Letter $services
+     * @param Letter $invite
      * @return View
      */
     public function edit(Request $request, Letter $service): View
     {
-        if ($request->has('ttd')) {
-            return view('pages.transaction.services.sign', [
+        if ($request->has('sign')) {
+            return view('pages.transaction.invite.sign', [
                 'data' => $service,
                 'classifications' => Classification::all(),
-                'admin' => User::where('role', Role::ADMIN->status())->get(),
-                'staff' => User::where('role', Role::STAFF->status())->get(),
-                'agama' => ['Islam', 'Kristen', 'Katolik', 'Hindu', 'Budha', 'Konghucu'],
-                'pernikahan' => ['Belum Kawin', 'Kawin', 'Cerai Hidup', 'Cerai Mati']
             ]);
         }
-        return view('pages.transaction.services.edit', [
+        return view('pages.transaction.invite.edit', [
             'data' => $service,
             'classifications' => Classification::all(),
-            'admin' => User::where('role', Role::ADMIN->status())->get(),
-            'staff' => User::where('role', Role::STAFF->status())->get(),
-            'agama' => ['Islam', 'Kristen', 'Katolik', 'Hindu', 'Budha', 'Konghucu'],
-            'pernikahan' => ['Belum Kawin', 'Kawin', 'Cerai Hidup', 'Cerai Mati']
         ]);
     }
 
@@ -156,11 +147,11 @@ class ServicesLetterController extends Controller
      * @param  \App\Models\Letter  $letter
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Letter $service)
+    public function update(Request $request, Letter $invite)
     {
         try {
             $updated = Letter::find($request->id);
-            if ($request->has('ttd')) {
+            if ($request->has('sign')) {
                 $data = $request->validate(
                     [
                         'agenda_number' => ['required'],
@@ -190,42 +181,35 @@ class ServicesLetterController extends Controller
                         ]);
                     }
                     return redirect()
-                        ->route('transaction.services.index')
+                        ->route('transaction.invite.index')
                         ->with('success', __('menu.general.success'));
                 }
             } else {
-                $newLetter = $request->validate(
+                $invite->update($request->validate(
                     [
                         "type" => "required",
                         "reference_number" => 'required',
                         "classification_code" => "required",
                         "letter_date" => "required",
-                        "petugas" => "required",
-                        "sign" => "required",
+                        "sign_name" => "required",
+                        "sign_id" => "required",
+                        "sign_position" => "required",
+                        "sign_rank" => "required",
                         "explain_name" => "required",
                         "explain_nik" => "required",
+                        "explain_place_and_date_of_birth" => "required",
                         "explain_religion" => "required",
+                        "explain_job" => "required",
                         "explain_address" => "required",
                         "explain_martial_status" => "required",
+                        "explain_country" => "required",
                         "description" => "required",
-                        "explain_phone" => 'required'
                     ]
-                );
-                $sign = User::find($newLetter['sign']);
-                $petugas = User::find($newLetter['petugas']);
-                $newLetter['petugas_name'] = $petugas->name;
-                $newLetter['sign_name'] = $sign->name;
-                $newLetter['sign_position'] = $sign->posisi;
-                $newLetter['sign_rank'] = $sign->pangkat;
-                $newLetter['sign_id'] = $sign->nip;
-                $result = $service->update($newLetter);
-                if ($result) {
-                    return redirect()
-                        ->route('transaction.services.index')
-                        ->with('success', __('menu.general.success'));
-                } else {
-                    return back()->with('error', "Update gagal");
-                }
+                ));
+
+                return redirect()
+                    ->route('transaction.invite.index')
+                    ->with('success', __('menu.general.success'));
             }
         } catch (\Throwable $exception) {
             return back()->with('error', $exception->getMessage());
@@ -243,7 +227,7 @@ class ServicesLetterController extends Controller
         try {
             $service->delete();
             return redirect()
-                ->route('transaction.services.index')
+                ->route('transaction.invite.index')
                 ->with('success', __('menu.general.success'));
         } catch (\Throwable $exception) {
             return back()->with('error', $exception->getMessage());
