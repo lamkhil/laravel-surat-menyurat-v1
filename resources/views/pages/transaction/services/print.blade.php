@@ -56,6 +56,10 @@
         border: solid 0px #fff;
     }
 
+    td{
+        vertical-align: top;
+    }
+
     #footer {
         position: absolute;
         bottom: 0;
@@ -135,10 +139,10 @@
                 <table style="margin-top: 12px; font-size:14px">
                     <tr>
                         <td>
-                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">a. &nbsp;Nama </p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">a.&nbsp;Nama </p>
                         </td>
                         <td>
-                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">&nbsp; &nbsp;&nbsp; &nbsp;:</p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</p>
                         </td>
                         <td>
                             <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$data->sign_name}}</p>
@@ -146,10 +150,10 @@
                     </tr>
                     <tr>
                         <td>
-                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">b. &nbsp;Jabatan </p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">b.&nbsp;Jabatan </p>
                         </td>
                         <td>
-                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">&nbsp; &nbsp;&nbsp; &nbsp;:</p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</p>
                         </td>
                         <td>
                             <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$data->sign_position}}</p>
@@ -166,10 +170,10 @@
                 <table style="margin-top: 12px; font-size:14px">
                     <tr>
                         <td>
-                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$a++}}. &nbsp;Nama </p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$a++}}.&nbsp;Nama </p>
                         </td>
                         <td>
-                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">&nbsp; &nbsp;&nbsp; &nbsp;:</p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</p>
                         </td>
                         <td>
                             <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$data->explain_name}}</p>
@@ -178,10 +182,10 @@
                     @if($data->explain_place_and_date_of_birth!=null)
                     <tr>
                         <td>
-                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$a++}}. &nbsp;Tempat, Tgl Lahir </p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$a++}}.&nbsp;Tempat,&nbsp;Tgl&nbsp;Lahir</p>
                         </td>
                         <td>
-                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">&nbsp; &nbsp;&nbsp; &nbsp;:</p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</p>
                         </td>
                         <td>
                             <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$data->explain_place_and_date_of_birth}}</p>
@@ -191,10 +195,10 @@
 
                     <tr>
                         <td>
-                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$a++}}. &nbsp;Kebangsaan</p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$a++}}.&nbsp;Kebangsaan</p>
                         </td>
                         <td>
-                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">&nbsp; &nbsp;&nbsp; &nbsp;:</p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</p>
                         </td>
                         <td>
                             <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$data->explain_country}}</p>
@@ -205,10 +209,10 @@
 
                     <tr>
                         <td>
-                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$a++}}. &nbsp;Status Perkawinan </p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$a++}}.&nbsp;Status&nbsp;Perkawinan</p>
                         </td>
                         <td>
-                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">&nbsp; &nbsp;&nbsp; &nbsp;:</p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</p>
                         </td>
                         <td>
                             <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$data->explain_martial_status}}</p>
@@ -217,10 +221,10 @@
 
                     <tr>
                         <td>
-                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$a++}}. &nbsp;Agama </p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$a++}}.&nbsp;Agama </p>
                         </td>
                         <td>
-                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">&nbsp; &nbsp;&nbsp; &nbsp;:</p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</p>
                         </td>
                         <td>
                             <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$data->explain_religion}}</p>
@@ -230,10 +234,10 @@
                     @if($data->explain_job!=null)
                     <tr>
                         <td>
-                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$a++}}. &nbsp;Pekerjaan </p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$a++}}.&nbsp;Pekerjaan </p>
                         </td>
                         <td>
-                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">&nbsp; &nbsp;&nbsp; &nbsp;:</p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</p>
                         </td>
                         <td>
                             <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$data->explain_job}}</p>
@@ -242,10 +246,10 @@
                     @endif
                     <tr>
                         <td>
-                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$a++}}. &nbsp;Alamat </p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$a++}}.&nbsp;Alamat </p>
                         </td>
                         <td>
-                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">&nbsp; &nbsp;&nbsp; &nbsp;:</p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</p>
                         </td>
                         <td>
                             <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$data->explain_address}}</p>
