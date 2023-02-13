@@ -77,6 +77,9 @@ class ServicesLetterController extends Controller
                     "explain_phone" => 'required'
                 ]
             );
+            $newLetter['explain_place_and_date_of_birth']=$request->explain_place_and_date_of_birth;
+            $newLetter['explain_country']=$request->explain_country;
+            $newLetter['explain_job'] = $request->explain_job;
             $sign = User::find($newLetter['sign']);
             $petugas = User::find($newLetter['petugas']);
             $newLetter['user_id'] = $user->id;
@@ -172,10 +175,9 @@ class ServicesLetterController extends Controller
                         'classification_code' => ['required'],
                     ]
                 );
-                $data['type'] = LetterType::OUTGOING->type();
                 $updated->update($data);
                 if ($request->hasFile('attachments')) {
-
+                    $data['type'] = LetterType::OUTGOING->type();
                     foreach ($request->attachments as $attachment) {
                         $extension = $attachment->getClientOriginalExtension();
                         if (!in_array($extension, ['png', 'jpg', 'jpeg', 'pdf'])) continue;
@@ -189,10 +191,11 @@ class ServicesLetterController extends Controller
                             'letter_id' => $request->id,
                         ]);
                     }
-                    return redirect()
-                        ->route('transaction.services.index')
-                        ->with('success', __('menu.general.success'));
                 }
+
+                return redirect()
+                ->route('transaction.services.index')
+                ->with('success', __('menu.general.success'));
             } else {
                 $newLetter = $request->validate(
                     [

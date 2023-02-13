@@ -100,6 +100,9 @@
             <div class="col-sm-12 col-12 col-md-6 col-lg-4">
                 <x-input-form name="explain_job" label="Pekerjaan" :value="$data->explain_job ?? ''"  />
             </div>
+            <div class="col-sm-12 col-12 col-md-6 col-lg-4">
+                <x-input-form name="explain_country" label="Kebangsaan" :value="$data->explain_country" />
+            </div>
             <div class="col-sm-12 col-12 col-md-12 col-lg-12">
                 <x-input-textarea-form name="description" label="Menerangkan Bahwa" :value="$data->description ?? ''"  />
             </div>

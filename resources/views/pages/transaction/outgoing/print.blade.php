@@ -58,16 +58,16 @@
 $bulan = ['JANUARI', 'FEBRUARI', 'MARET', 'APRIL', 'MEI', 'JUNI', 'JULI', 'AGUSTUS', 'SEPTEMBER', 'OKTOBER', 'NOVEMBER', 'DESEMBER']
 @endphp
 
-<body>
+<body onload="window.print()">
 
-    <h6 style="margin: 0px; font-size:9pt;font-family:Arial;">DAFTAR PENERIMAAN PELAYANAN KELURAHAN NAMBANGAN LOR</h6>
-    <h6 style="margin: 0px; font-size:9pt;font-family:Arial;">KECAMATAN MANGUHARJO KOTA MADIUN</h6>
+    <h6 style="margin: 0px; font-size:9pt;font-family:Tahoma;">DAFTAR PENERIMAAN PELAYANAN KELURAHAN NAMBANGAN LOR</h6>
+    <h6 style="margin: 0px; font-size:9pt;font-family:Tahoma;">KECAMATAN MANGUHARJO KOTA MADIUN</h6>
     @if($since && $until && $filter)
     @php
         $bulanNum = explode('-', $since)[1];
         $bulanString = $bulan[(int)$bulanNum-1];
     @endphp
-    <h6 style="margin: 0px; font-size:9pt;font-family:Arial;">BULAN {{$bulanString}} TAHUN 2023</h6>
+    <h6 style="margin: 0px; font-size:9pt;font-family:Tahoma;">BULAN {{$bulanString}} TAHUN 2023</h6>
     @else
     @php
         $bulanNum = '';
@@ -78,7 +78,7 @@ $bulan = ['JANUARI', 'FEBRUARI', 'MARET', 'APRIL', 'MEI', 'JUNI', 'JULI', 'AGUST
             $bulanString = $bulan[(int)$bulanNum - 1];
         }
     @endphp
-    <h6 style="margin: 0px; font-size:9pt;font-family:Arial;">BULAN {{$bulanString}} TAHUN 2023</h6>
+    <h6 style="margin: 0px; font-size:9pt;font-family:Tahoma;">BULAN {{$bulanString}} TAHUN 2023</h6>
     @endif
     <hr>
 
@@ -94,6 +94,7 @@ $bulan = ['JANUARI', 'FEBRUARI', 'MARET', 'APRIL', 'MEI', 'JUNI', 'JULI', 'AGUST
                 <th>TANGGAL PELAYANAN</th>
                 <th>PETUGAS PELAYANAN</th>
                 <th>PENERIMA PELAYANAN</th>
+                <th>NIK</th>
                 <th>ALAMAT</th>
                 <th>NO HP</th>
             </tr>
@@ -106,6 +107,7 @@ $bulan = ['JANUARI', 'FEBRUARI', 'MARET', 'APRIL', 'MEI', 'JUNI', 'JULI', 'AGUST
                 <td>{{ $letter->letter_date->format('d/m/Y') }}</td>
                 <td>{{ $letter->petugas_name }}</td>
                 <td>{{ $letter->explain_name }}</td>
+                <td>{{ $letter->explain_nik }}</td>
                 <td>{{ $letter->explain_address }}</td>
                 <td>{{ $letter->explain_phone }}</td>
             </tr>

@@ -8,6 +8,7 @@
             height: 98%;
             margin: 0;
             padding: 0;
+            font-family:Tahoma;
         }
 
         #footer {
@@ -97,6 +98,7 @@
     <!-- =================================== -->
 
     <div id="header-report" class="col-md-12">
+        <br><br><br>
         <table style="width: 100%; margin-bottom:4px">
             <tr>
                 <td width="100px">
@@ -104,15 +106,15 @@
                 </td>
                 <td>
                     <center>
-                        <h4 style="margin: 0px; font-family:Arial;font-size:16pt;color:#000">PEMERINTAH KOTA MADIUN</h4>
-                        <h5 style="margin: 0px;font-family:Arial;font-size:12pt;">
-                            KECAMATAN MANGUHARJO<br />
+                        <h4 style="margin: 0px; font-family:Tahoma;font-size:16pt;color:#000"><b>PEMERINTAH KOTA MADIUN</b></h4>
+                        <h5 style="margin: 0px;font-family:Tahoma;font-size:14pt;">
+                            <b>KECAMATAN MANGUHARJO</b> <br />
                             <b>KELURAHAN NAMBANGAN LOR</b>
                         </h5>
                         <div style="width:90%">
-                            <h6 style="margin: 0px; font-size:9pt;font-family:Arial;">Jl. Merpati No. 75, Kota Madiun, 63129, Indonesia</h6>
-                            <h6 style="margin: 0px; font-size:9pt;font-family:Arial;">Telp.: 493137</h6>
-                            <h6 style="margin: 0px; font-size:9pt;font-family:Arial;">https://madiunkota.go.id</h6>
+                            <h6 style="margin: 0px; font-size:12pt;font-family:Tahoma;">Jl. Merpati No. 75, Kota Madiun, 63129, Indonesia</h6>
+                            <h6 style="margin: 0px; font-size:12pt;font-family:Tahoma;">Telp.: 493137</h6>
+                            <h6 style="margin: 0px; font-size:12pt;font-family:Tahoma;">https://madiunkota.go.id</h6>
                         </div>
                     </center>
                 </td>
@@ -128,29 +130,29 @@
             </div>
             <center><span style="font-size:12pt; margin:14px"><b>NOMOR</b> : {{$data->reference_number}}</span></center><br><br>
 
-            <p style="margin: 0px; font-family:Arial;font-size:12pt;color:#000">1. Yang bertanda tangan di bawah ini:</p>
-            <div style="margin-left: 20px; font-family:Arial;font-size:12pt;color:#000">
+            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">1. Yang bertanda tangan di bawah ini:</p>
+            <div style="margin-left: 20px; font-family:Tahoma;font-size:12pt;color:#000">
                 <table style="margin-top: 12px; font-size:14px">
                     <tr>
                         <td>
-                            <p style="margin: 0px; font-family:Arial;font-size:12pt;color:#000">a. &nbsp;Nama </p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">a. &nbsp;Nama </p>
                         </td>
                         <td>
-                            <p style="margin: 0px; font-family:Arial;font-size:12pt;color:#000">&nbsp; &nbsp;&nbsp; &nbsp;:</p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">&nbsp; &nbsp;&nbsp; &nbsp;:</p>
                         </td>
                         <td>
-                            <p style="margin: 0px; font-family:Arial;font-size:12pt;color:#000">{{$data->sign_name}}</p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$data->sign_name}}</p>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <p style="margin: 0px; font-family:Arial;font-size:12pt;color:#000">b. &nbsp;Jabatan </p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">b. &nbsp;Jabatan </p>
                         </td>
                         <td>
-                            <p style="margin: 0px; font-family:Arial;font-size:12pt;color:#000">&nbsp; &nbsp;&nbsp; &nbsp;:</p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">&nbsp; &nbsp;&nbsp; &nbsp;:</p>
                         </td>
                         <td>
-                            <p style="margin: 0px; font-family:Arial;font-size:12pt;color:#000">{{$data->sign_position}}</p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$data->sign_position}}</p>
                         </td>
                     </tr>
                 </table>
@@ -159,119 +161,111 @@
             @php
             $a = 'a';
             @endphp
-            <p style="margin: 0px; font-family:Arial;font-size:12pt;color:#000">2. Dengan ini menerangkan :</p>
-            <div style="margin-left: 20px; font-family:Arial;font-size:12pt;color:#000">
+            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">2. Dengan ini menerangkan :</p>
+            <div style="margin-left: 20px; font-family:Tahoma;font-size:12pt;color:#000">
                 <table style="margin-top: 12px; font-size:14px">
                     <tr>
                         <td>
-                            <p style="margin: 0px; font-family:Arial;font-size:12pt;color:#000">{{$a++}}. &nbsp;Nama </p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$a++}}. &nbsp;Nama </p>
                         </td>
                         <td>
-                            <p style="margin: 0px; font-family:Arial;font-size:12pt;color:#000">&nbsp; &nbsp;&nbsp; &nbsp;:</p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">&nbsp; &nbsp;&nbsp; &nbsp;:</p>
                         </td>
                         <td>
-                            <p style="margin: 0px; font-family:Arial;font-size:12pt;color:#000">{{$data->explain_name}}</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p style="margin: 0px; font-family:Arial;font-size:12pt;color:#000">{{$a++}}. &nbsp;NIK </p>
-                        </td>
-                        <td>
-                            <p style="margin: 0px; font-family:Arial;font-size:12pt;color:#000">&nbsp; &nbsp;&nbsp; &nbsp;:</p>
-                        </td>
-                        <td>
-                            <p style="margin: 0px; font-family:Arial;font-size:12pt;color:#000">{{$data->explain_nik}}</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p style="margin: 0px; font-family:Arial;font-size:12pt;color:#000">{{$a++}}. &nbsp;Alamat </p>
-                        </td>
-                        <td>
-                            <p style="margin: 0px; font-family:Arial;font-size:12pt;color:#000">&nbsp; &nbsp;&nbsp; &nbsp;:</p>
-                        </td>
-                        <td>
-                            <p style="margin: 0px; font-family:Arial;font-size:12pt;color:#000">{{$data->explain_address}}</p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$data->explain_name}}</p>
                         </td>
                     </tr>
                     @if($data->explain_place_and_date_of_birth!=null)
                     <tr>
                         <td>
-                            <p style="margin: 0px; font-family:Arial;font-size:12pt;color:#000">{{$a++}}. &nbsp;Tempat, Tanggal Lahir </p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$a++}}. &nbsp;Tempat, Tanggal Lahir </p>
                         </td>
                         <td>
-                            <p style="margin: 0px; font-family:Arial;font-size:12pt;color:#000">&nbsp; &nbsp;&nbsp; &nbsp;:</p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">&nbsp; &nbsp;&nbsp; &nbsp;:</p>
                         </td>
                         <td>
-                            <p style="margin: 0px; font-family:Arial;font-size:12pt;color:#000">{{$data->explain_place_and_date_of_birth}}</p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$data->explain_place_and_date_of_birth}}</p>
                         </td>
                     </tr>
                     @endif
 
-                    <!-- <tr>
+                    <tr>
                         <td>
-                            <p style="margin: 0px; font-family:Arial;font-size:12pt;color:#000">c. &nbsp;Kebangsaan</p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">c. &nbsp;Kebangsaan</p>
                         </td>
                         <td>
-                            <p style="margin: 0px; font-family:Arial;font-size:12pt;color:#000">&nbsp; &nbsp;&nbsp; &nbsp;:</p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">&nbsp; &nbsp;&nbsp; &nbsp;:</p>
                         </td>
                         <td>
-                            <p style="margin: 0px; font-family:Arial;font-size:12pt;color:#000">{{$data->explain_country}}</p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$data->explain_country}}</p>
                         </td>
-                    </tr> -->
+                    </tr>
+
+                    
 
                     <tr>
                         <td>
-                            <p style="margin: 0px; font-family:Arial;font-size:12pt;color:#000">{{$a++}}. &nbsp;Agama </p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$a++}}. &nbsp;Status Perkawinan </p>
                         </td>
                         <td>
-                            <p style="margin: 0px; font-family:Arial;font-size:12pt;color:#000">&nbsp; &nbsp;&nbsp; &nbsp;:</p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">&nbsp; &nbsp;&nbsp; &nbsp;:</p>
                         </td>
                         <td>
-                            <p style="margin: 0px; font-family:Arial;font-size:12pt;color:#000">{{$data->explain_religion}}</p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$data->explain_martial_status}}</p>
                         </td>
                     </tr>
 
                     <tr>
                         <td>
-                            <p style="margin: 0px; font-family:Arial;font-size:12pt;color:#000">{{$a++}}. &nbsp;Status Perkawinan </p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$a++}}. &nbsp;Agama </p>
                         </td>
                         <td>
-                            <p style="margin: 0px; font-family:Arial;font-size:12pt;color:#000">&nbsp; &nbsp;&nbsp; &nbsp;:</p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">&nbsp; &nbsp;&nbsp; &nbsp;:</p>
                         </td>
                         <td>
-                            <p style="margin: 0px; font-family:Arial;font-size:12pt;color:#000">{{$data->explain_martial_status}}</p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$data->explain_religion}}</p>
                         </td>
                     </tr>
 
                     @if($data->explain_job!=null)
                     <tr>
                         <td>
-                            <p style="margin: 0px; font-family:Arial;font-size:12pt;color:#000">{{$a++}}. &nbsp;Pekerjaan </p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$a++}}. &nbsp;Pekerjaan </p>
                         </td>
                         <td>
-                            <p style="margin: 0px; font-family:Arial;font-size:12pt;color:#000">&nbsp; &nbsp;&nbsp; &nbsp;:</p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">&nbsp; &nbsp;&nbsp; &nbsp;:</p>
                         </td>
                         <td>
-                            <p style="margin: 0px; font-family:Arial;font-size:12pt;color:#000">{{$data->explain_job}}</p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$data->explain_job}}</p>
                         </td>
                     </tr>
                     @endif
+                    <tr>
+                        <td>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$a++}}. &nbsp;Alamat </p>
+                        </td>
+                        <td>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">&nbsp; &nbsp;&nbsp; &nbsp;:</p>
+                        </td>
+                        <td>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$data->explain_address}}</p>
+                        </td>
+                    </tr>
                 </table>
             </div>
             <br><br>
 
 
             @foreach($description as $desc)
-            <dd style="margin: 12px; font-family:Arial;font-size:12pt;color:#000;text-indent: 0.5in;">
+            <dd style="margin: 12px; font-family:Tahoma;font-size:12pt;color:#000;text-indent: 0.5in;text-align: justify;
+  text-justify: inter-word;">
                 {{$desc}}
             </dd>
             @endforeach
 
         </div>
         <div class="col-md-12">
-            <table class="pull-right" style="margin-top: 20px; font-size:12pt; font-family:Arial; text-align:center;">
+            <table class="pull-right" style="margin-top: 20px; font-size:12pt; font-family:Tahoma; text-align:center;">
                 <tr>
                     <td>
                         Madiun, {{$data->formatted_letter_date2}}<br>
