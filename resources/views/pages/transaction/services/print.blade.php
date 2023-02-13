@@ -178,7 +178,7 @@
                     @if($data->explain_place_and_date_of_birth!=null)
                     <tr>
                         <td>
-                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$a++}}. &nbsp;Tempat, Tanggal Lahir </p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$a++}}. &nbsp;Tempat, Tgl Lahir </p>
                         </td>
                         <td>
                             <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">&nbsp; &nbsp;&nbsp; &nbsp;:</p>
@@ -191,7 +191,7 @@
 
                     <tr>
                         <td>
-                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">c. &nbsp;Kebangsaan</p>
+                            <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">{{$a++}}. &nbsp;Kebangsaan</p>
                         </td>
                         <td>
                             <p style="margin: 0px; font-family:Tahoma;font-size:12pt;color:#000">&nbsp; &nbsp;&nbsp; &nbsp;:</p>

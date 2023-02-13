@@ -175,7 +175,6 @@ class ServicesLetterController extends Controller
                         'classification_code' => ['required'],
                     ]
                 );
-                $updated->update($data);
                 if ($request->hasFile('attachments')) {
                     $data['type'] = LetterType::OUTGOING->type();
                     foreach ($request->attachments as $attachment) {
@@ -192,6 +191,7 @@ class ServicesLetterController extends Controller
                         ]);
                     }
                 }
+                $updated->update($data);
 
                 return redirect()
                 ->route('transaction.services.index')
