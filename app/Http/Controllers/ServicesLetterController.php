@@ -60,6 +60,9 @@ class ServicesLetterController extends Controller
         try {
             $user = auth()->user();
             if ($request->type != LetterType::SERVICES->type()) throw new \Exception(__('menu.transaction.services_letter'));
+            if (str_contains($request->reference_number, 'agenda') || str_contains($request->reference_number, 'indeks')) {
+                return back()->with('error',"Sesuaikan nomor surat");
+            }
             $newLetter = $request->validate(
                 [
                     "type" => "required",
