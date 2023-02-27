@@ -44,7 +44,7 @@ class InviteLetterController extends Controller
             'classifications' => Classification::where('jenis_surat', 'service')->get(),
             'admin' => User::where('role',Role::ADMIN->status())->get(),
             'staff' => User::where('role',Role::STAFF->status())->get(),
-            'agama'=>['Islam', 'Kristen', 'Katolik', 'Hindu', 'Budha', 'Konghucu'],
+            'agama'=>['Islam', 'Kristen', 'Katholik', 'Hindu', 'Budha', 'Konghucu'],
             'pernikahan'=>['Belum Kawin', 'Kawin', 'Cerai Hidup', 'Cerai Mati']
         ]);
     }
