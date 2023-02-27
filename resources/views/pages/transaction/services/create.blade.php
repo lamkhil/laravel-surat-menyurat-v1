@@ -103,7 +103,7 @@
                 <x-input-form name="explain_country" label="Kebangsaan" value="Indonesia" />
             </div>
             <div class="col-sm-12 col-12 col-md-12 col-lg-12">
-                <x-input-textarea-form name="description" label="Menerangkan Bahwa" :value='"[ganti sesuai keperluan]\r\nBerhubung dengan maksud yang bersangkutan,diminta agar saudara kepala Dinas/Instansi terkait dapat memberikan bantuan serta fasilitasi seperlunya.\r\nDemikian surat keterangan ini dibuat untuk dipergunakan sebagaimana mestinya."' />
+                <x-input-textarea-form name="description" label="Menerangkan Bahwa" :value='"[ganti sesuai keperluan]\r\nBerhubung dengan makasud yang bersangkutan,diminta agar saudara kepala Dinas/Instansi terkait dapat memberikan bantuan serta fasilitasi seperlunya.\r\nDemikian surat keterangan ini dibuat untuk dipergunakan sebagaimana mestinya."' />
             </div>
 
         </div>
