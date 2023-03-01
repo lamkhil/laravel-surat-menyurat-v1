@@ -178,6 +178,9 @@ class ServicesLetterController extends Controller
                         'classification_code' => ['required'],
                     ]
                 );
+                $data = array_merge($data, [
+                    'explain_place_and_date_of_birth'=>$request->explain_place_and_date_of_birth
+                ]);
                 if ($request->hasFile('attachments')) {
                     $data['type'] = LetterType::OUTGOING->type();
                     foreach ($request->attachments as $attachment) {
@@ -217,6 +220,9 @@ class ServicesLetterController extends Controller
                         "explain_phone" => 'required'
                     ]
                 );
+                $newLetter = array_merge($newLetter, [
+                    'explain_place_and_date_of_birth'=>$request->explain_place_and_date_of_birth
+                ]);
                 $sign = User::find($newLetter['sign']);
                 $petugas = User::find($newLetter['petugas']);
                 $newLetter['petugas_name'] = $petugas->name;
