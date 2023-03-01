@@ -278,7 +278,7 @@
                         @else
                         <b>a.n. LURAH NAMBANGAN LOR</b><br>Sekretaris
                         @endif<br /><br /><br /><br /><br /><br />
-                        <b style="text-transform: uppercase;"><u>{{$data->sign_name}}</u></b> <br> {{$data->sign_rank}}<br />NIP. {{$data->sign_id}}
+                        <b><u>{{$data->sign_name}}</u></b> <br> {{$data->sign_rank}}<br />NIP. {{$data->sign_id}}
                     </td>
                 </tr>
             </table>
