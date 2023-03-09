@@ -57,13 +57,18 @@ class OutgoingLetterController extends Controller
         $agenda = __('menu.agenda.menu');
         $letter = __('menu.agenda.outgoing_letter');
         $title = App::getLocale() == 'id' ? "$agenda $letter" : "$letter $agenda";
+        $dataRaw = Letter::outgoing()->agenda($request->since, $request->until, $request->filter)->get();
+        $data = $dataRaw->groupBy(function($data) {
+            return $data->classification->type;
+        });
         return view('pages.transaction.outgoing.print', [
-            'data' => Letter::outgoing()->agenda($request->since, $request->until, $request->filter)->get(),
+            'data_raw' => $dataRaw,
+            'data' => $data,
             'search' => $request->search,
             'since' => $request->since,
             'until' => $request->until,
             'filter' => $request->filter,
-            'config' => Config::pluck('value','code')->toArray(),
+            'config' => Config::pluck('value', 'code')->toArray(),
             'title' => $title,
         ]);
     }
@@ -99,7 +104,7 @@ class OutgoingLetterController extends Controller
                 foreach ($request->attachments as $attachment) {
                     $extension = $attachment->getClientOriginalExtension();
                     if (!in_array($extension, ['png', 'jpg', 'jpeg', 'pdf'])) continue;
-                    $filename = time() . '-'. $attachment->getClientOriginalName();
+                    $filename = time() . '-' . $attachment->getClientOriginalName();
                     $filename = str_replace(' ', '-', $filename);
                     $attachment->storeAs('public/attachments', $filename);
                     Attachment::create([
@@ -138,7 +143,7 @@ class OutgoingLetterController extends Controller
      * @return View
      */
     public function edit(Letter $outgoing): View
-    {   
+    {
         return view('pages.transaction.outgoing.edit', [
             'data' => $outgoing,
             'classifications' => Classification::all(),
@@ -160,7 +165,7 @@ class OutgoingLetterController extends Controller
                 foreach ($request->attachments as $attachment) {
                     $extension = $attachment->getClientOriginalExtension();
                     if (!in_array($extension, ['png', 'jpg', 'jpeg', 'pdf'])) continue;
-                    $filename = time() . '-'. $attachment->getClientOriginalName();
+                    $filename = time() . '-' . $attachment->getClientOriginalName();
                     $filename = str_replace(' ', '-', $filename);
                     $attachment->storeAs('public/attachments', $filename);
                     Attachment::create([

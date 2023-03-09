@@ -74,7 +74,7 @@ $bulan = ['JANUARI', 'FEBRUARI', 'MARET', 'APRIL', 'MEI', 'JUNI', 'JULI', 'AGUST
         $bulanString = $bulan[0];
 
         if(sizeof($data)>0){
-            $bulanNum = $data[0]->letter_date->format('m');
+            $bulanNum = $data_raw[0]->letter_date->format('m');
             $bulanString = $bulan[(int)$bulanNum - 1];
         }
     @endphp
@@ -94,23 +94,23 @@ $bulan = ['JANUARI', 'FEBRUARI', 'MARET', 'APRIL', 'MEI', 'JUNI', 'JULI', 'AGUST
                 <th>TANGGAL PELAYANAN</th>
                 <th>PETUGAS PELAYANAN</th>
                 <th>PENERIMA PELAYANAN</th>
-                <th>NIK</th>
                 <th>ALAMAT</th>
                 <th>NO HP</th>
             </tr>
         </thead>
         <tbody>
-            @foreach($data as $letter)
+            @foreach($data as $type => $item)
+            @foreach($item as $letter)
             <tr>
                 <td>{{ $no++ }}</td>
-                <td>{{ $letter->classification->type }}</td>
+                <td>{{ $type }}</td>
                 <td>{{ $letter->letter_date->format('d/m/Y') }}</td>
                 <td>{{ $letter->petugas_name }}</td>
-                <td>{{ $letter->explain_name }}</td>
-                <td>{{ $letter->explain_nik }}</td>
+                <td>{{ $letter->explain_name }}{!! $letter->note!=null?'<br>('.$letter->note.')':'' !!}</td>
                 <td>{{ $letter->explain_address }}</td>
                 <td>{{ $letter->explain_phone }}</td>
             </tr>
+            @endforeach
             @endforeach
         </tbody>
     </table>

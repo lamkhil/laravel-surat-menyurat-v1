@@ -46,9 +46,8 @@
                         @if(!\Illuminate\Support\Facades\Route::is('*.show'))
                         <a class="dropdown-item" href="{{ route('transaction.outgoing.show', $letter) }}">{{ __('menu.general.view') }}</a>
                         @endif
-                        @if($letter->explain_name == null)
-                            <a class="dropdown-item" href="{{ route('transaction.services.edit', $letter) }}">{{ __('menu.general.edit') }}</a>
-                        @endif
+                        
+                        <a class="dropdown-item" href="{{ route('transaction.outgoing.edit', $letter) }}">{{ __('menu.general.edit') }}</a>
                         
                         <form action="{{ route('transaction.outgoing.destroy', $letter) }}" class="d-inline" method="post">
                             @csrf
