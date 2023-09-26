@@ -112,7 +112,7 @@
                         <div style="width:90%">
                             <h6 style="margin: 0px; font-size:9pt;font-family:Arial;">Jl. Merpati No. 75, Kota Madiun, 63129, Indonesia</h6>
                             <h6 style="margin: 0px; font-size:9pt;font-family:Arial;">Telp.: 493137</h6>
-                            <h6 style="margin: 0px; font-size:9pt;font-family:Arial;">https://madiunkota.go.id</h6>
+                            <h6 style="margin: 0px; font-size:12pt;font-family:Tahoma;">Laman:&nbsp;https://madiunkota.go.id</h6>
                         </div>
                     </center>
                 </td>
@@ -280,7 +280,7 @@
                         @else
                         <b>a.n. LURAH NAMBANGAN LOR</b><br>Sekretaris
                         @endif<br /><br /><br /><br /><br /><br />
-                        <b style="text-transform: uppercase;"><u>{{$data->sign_name}}</u></b> <br> {{$data->sign_rank}}<br />NIP. {{$data->sign_id}}
+                        <b style="text-transform: uppercase;"><u>{{$data->sign_name}}</u></b> <br> {{$data->sign_rank}}<br />NIP{{$data->sign_id}}
                     </td>
                 </tr>
             </table>
