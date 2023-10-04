@@ -117,7 +117,7 @@
                         </h5>
                         <div style="width:90%">
                             <h6 style="margin: 0px; font-size:12pt;font-family:Tahoma;">Jl.&nbsp;Merpati&nbsp;No.&nbsp;75,&nbsp;Kota Madiun,&nbsp;63129,&nbsp;Indonesia</h6>
-                            <h6 style="margin: 0px; font-size:12pt;font-family:Tahoma;">Telp.:&nbsp;493137</h6>
+                            <h6 style="margin: 0px; font-size:12pt;font-family:Tahoma;">Telepon:&nbsp;493137</h6>
                             <h6 style="margin: 0px; font-size:12pt;font-family:Tahoma;">Laman:&nbsp;https://madiunkota.go.id</h6>
                         </div>
                     </center>
@@ -278,7 +278,7 @@
                         @else
                         <b>a.n. LURAH NAMBANGAN LOR</b><br>Sekretaris
                         @endif<br /><br /><br /><br /><br /><br />
-                        <b><u>{{$data->sign_name}}</u></b> <br> {{$data->sign_rank}}<br />NIP{{$data->sign_id}}
+                        <b><u>{{$data->sign_name}}</u></b> <br> {{$data->sign_rank}}<br />NIP {{trim($data->sign_id, " ")}}
                     </td>
                 </tr>
             </table>
