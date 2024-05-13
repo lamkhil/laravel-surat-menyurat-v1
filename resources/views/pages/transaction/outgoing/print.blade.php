@@ -67,7 +67,7 @@ $bulan = ['JANUARI', 'FEBRUARI', 'MARET', 'APRIL', 'MEI', 'JUNI', 'JULI', 'AGUST
         $bulanNum = explode('-', $since)[1];
         $bulanString = $bulan[(int)$bulanNum-1];
     @endphp
-    <h6 style="margin: 0px; font-size:9pt;font-family:Tahoma;">BULAN {{$bulanString}} TAHUN 2023</h6>
+    <h6 style="margin: 0px; font-size:9pt;font-family:Tahoma;">BULAN {{$bulanString}} TAHUN {{date('Y')}}</h6>
     @else
     @php
         $bulanNum = '';

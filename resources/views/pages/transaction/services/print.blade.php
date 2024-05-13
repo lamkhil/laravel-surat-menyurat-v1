@@ -269,7 +269,7 @@
 
         </div>
         <div class="col-md-12">
-            <table class="pull-right" style="margin-top: 20px; font-size:12pt; font-family:Tahoma; text-align:center;">
+            <table class="pull-right" style="margin-top: 20px; font-size:12pt; font-family:Tahoma; text-align:left;">
                 <tr>
                     <td>
                         Madiun, {{$data->formatted_letter_date2}}<br>
