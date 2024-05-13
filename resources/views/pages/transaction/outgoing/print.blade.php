@@ -55,7 +55,8 @@
 </head>
 
 @php
-$bulan = ['JANUARI', 'FEBRUARI', 'MARET', 'APRIL', 'MEI', 'JUNI', 'JULI', 'AGUSTUS', 'SEPTEMBER', 'OKTOBER', 'NOVEMBER', 'DESEMBER']
+$bulan = ['JANUARI', 'FEBRUARI', 'MARET', 'APRIL', 'MEI', 'JUNI', 'JULI', 'AGUSTUS', 'SEPTEMBER', 'OKTOBER', 'NOVEMBER', 'DESEMBER'];
+$dateFilter = now()->format('Y-m-d');
 @endphp
 
 <body onload="window.print()">
@@ -64,10 +65,11 @@ $bulan = ['JANUARI', 'FEBRUARI', 'MARET', 'APRIL', 'MEI', 'JUNI', 'JULI', 'AGUST
     <h6 style="margin: 0px; font-size:9pt;font-family:Tahoma;">KECAMATAN MANGUHARJO KOTA MADIUN</h6>
     @if($since && $until && $filter)
     @php
+        $dateFilter = $since;
         $bulanNum = explode('-', $since)[1];
         $bulanString = $bulan[(int)$bulanNum-1];
     @endphp
-    <h6 style="margin: 0px; font-size:9pt;font-family:Tahoma;">BULAN {{$bulanString}} TAHUN {{date('Y')}}</h6>
+    <h6 style="margin: 0px; font-size:9pt;font-family:Tahoma;">BULAN {{$bulanString}} TAHUN {{explode('-', $dateFilter)[0]}}</h6>
     @else
     @php
         $bulanNum = '';
@@ -78,7 +80,7 @@ $bulan = ['JANUARI', 'FEBRUARI', 'MARET', 'APRIL', 'MEI', 'JUNI', 'JULI', 'AGUST
             $bulanString = $bulan[(int)$bulanNum - 1];
         }
     @endphp
-    <h6 style="margin: 0px; font-size:9pt;font-family:Tahoma;">BULAN {{$bulanString}} TAHUN 2023</h6>
+    <h6 style="margin: 0px; font-size:9pt;font-family:Tahoma;">BULAN {{$bulanString}} TAHUN {{explode('-', $dateFilter)[0]}}</h6>
     @endif
     <hr>
 
