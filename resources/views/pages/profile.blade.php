@@ -81,6 +81,12 @@
                             <div class="col-md-6 col-lg-12">
                                 <x-input-form name="name" :label="__('model.user.name')" :value="$data->name" />
                             </div>
+                            <div class="col-md-6 col-lg-12">
+                                <x-input-form name="pangkat" :label="__('model.user.pangkat')" :value="$data->pangkat" />
+                            </div>
+                            <div class="col-md-6 col-lg-12">
+                                <x-input-form name="posisi" :label="__('model.user.posisi')" :value="$data->posisi" />
+                            </div>
                             <div class="col-md-6">
                                 <x-input-form name="email" :label="__('model.user.email')" :value="$data->email" />
                             </div>

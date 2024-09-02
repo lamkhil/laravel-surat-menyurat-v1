@@ -40,6 +40,8 @@ return [
     ],
     'user' => [
         'name' => 'Nama',
+        'pangkat' => 'Pangkat',
+        'posisi' => 'Posisi',
         'email' => 'Surel',
         'password' => 'Kata Sandi',
         'phone' => 'Nomor Telepon',

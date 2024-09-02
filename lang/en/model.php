@@ -38,6 +38,8 @@ return [
     'user' => [
         'name' => 'Name',
         'email' => 'Email',
+        'pangkat' => 'Rank',
+        'posisi' => 'Position',
         'password' => 'Password',
         'phone' => 'Phone',
         'role' => 'Role',
