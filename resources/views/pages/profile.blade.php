@@ -93,6 +93,9 @@
                             <div class="col-md-6">
                                 <x-input-form name="phone" :label="__('model.user.phone')" :value="$data->phone ?? ''" />
                             </div>
+                            <div class="col-md-6">
+                                <x-input-form name="nip" :label="__('model.user.nip')" :value="$data->nip ?? ''" />
+                            </div>
                         </div>
                         <div class="mt-2">
                             <button type="submit" class="btn btn-primary me-2">{{ __('menu.general.update') }}</button>
