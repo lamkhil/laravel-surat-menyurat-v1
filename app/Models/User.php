@@ -26,6 +26,7 @@ class User extends Authenticatable
         'password',
         'phone',
         'role',
+        'nip',
         'pangkat',
         'posisi',
         'is_active',
