@@ -9,6 +9,7 @@
             $('#editModal input#name').val($(this).data('name'));
             $('#editModal input#phone').val($(this).data('phone'));
             $('#editModal input#email').val($(this).data('email'));
+            $('#editModal input#nip').val($(this).data('nip'));
             if ($(this).data('active') == 1) {
                 $('#editModal input#is_active').attr('checked', 1)
             } else {
@@ -58,6 +59,7 @@
                                         data-name="{{ $user->name }}"
                                         data-email="{{ $user->email }}"
                                         data-phone="{{ $user->phone }}"
+                                        data-nip="{{ $user->nip }}"
                                         data-active="{{ $user->is_active }}"
                                         data-bs-toggle="modal"
                                         data-bs-target="#editModal">
@@ -115,6 +117,7 @@
                     <x-input-form name="name" :label="__('model.user.name')"/>
                     <x-input-form name="email" :label="__('model.user.email')" type="email"/>
                     <x-input-form name="phone" :label="__('model.user.phone')"/>
+                    <x-input-form name="nip" :label="__('model.user.nip')"/>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
@@ -146,6 +149,7 @@
                     <x-input-form name="name" :label="__('model.user.name')"/>
                     <x-input-form name="email" :label="__('model.user.email')" type="email"/>
                     <x-input-form name="phone" :label="__('model.user.phone')"/>
+                    <x-input-form name="nip" :label="__('model.user.nip')"/>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="is_active" value="true" id="is_active">
                         <label class="form-check-label" for="is_active"> {{ __('model.user.is_active') }} </label>

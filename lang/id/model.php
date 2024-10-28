@@ -43,6 +43,7 @@ return [
         'pangkat' => 'Pangkat',
         'posisi' => 'Posisi',
         'email' => 'Surel',
+        'nip' => 'NIP',
         'password' => 'Kata Sandi',
         'phone' => 'Nomor Telepon',
         'role' => 'Peran',

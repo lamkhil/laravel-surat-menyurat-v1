@@ -29,6 +29,7 @@ class UpdateUserRequest extends FormRequest
             'phone' => __('model.user.phone'),
             'posisi' => __('model.user.posisi'),
             'pangkat' => __('model.user.pangkat'),
+            'nip' => __('model.user.nip'),
         ];
     }
 
@@ -46,6 +47,7 @@ class UpdateUserRequest extends FormRequest
             'is_active' => ['nullable'],
             'posisi' => ['nullable'],
             'pangkat' => ['nullable'],
+            'nip' => ['nullable']
         ];
     }
 }
